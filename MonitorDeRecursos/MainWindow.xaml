@@ -1,0 +1,25 @@
+﻿<Window x:Class="MonitorDeRecursos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+        xmlns:local="clr-namespace:MonitorDeRecursos"
+        mc:Ignorable="d"
+        Title="Uso del CPU" Height="450" Width="850"
+        Background="{DynamicResource DarkNebulaBrush}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/> <!-- side panel (0)-->
+            <ColumnDefinition Width="*"/>   <!-- Main (1)-->
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="{StaticResource DeepSpaceBrush}"> <!-- es el side panel con sus btns -->
+            <Button x:Name="cpu_btn" Content="CPU" Click="cpu_click" Style="{StaticResource SideBTN}"/>
+            <Button x:Name="ram_btn" Content="RAM" Click="ram_click" Style="{StaticResource SideBTN}"/>
+            <Button x:Name="d_btn" Content="Disk" Click="disk_click" Style="{StaticResource SideBTN}"/>
+        </StackPanel>
+
+        <ContentControl x:Name="Main" Grid.Column="1"/>
+    </Grid>
+</Window>

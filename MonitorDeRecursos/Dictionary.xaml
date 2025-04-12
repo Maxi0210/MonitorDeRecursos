@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF">
+
+    <!-- Estilo para el TextBlock del CPU -->
+    <Style x:Key="text" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Foreground" Value="{StaticResource RadiantSkyBrush}"/>
+    </Style>
+
+    <!-- Estilo para el borde del gráfico -->
+    <Style x:Key="Ch_Border" TargetType="Border">
+        <Setter Property="BorderBrush" Value="{StaticResource PlasmaBlueBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="CornerRadius" Value="7.5"/>
+        <Setter Property="Margin" Value="145,10,10,200"/>
+    </Style>
+
+    <SolidColorBrush x:Key="M_Chart" Color="#14141e"/>
+
+    <Style x:Key="SideBTN">
+        <Setter Property="Grid.Height" Value="60"/>
+    </Style>
+</ResourceDictionary>

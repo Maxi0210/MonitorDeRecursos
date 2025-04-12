@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="MonitorDeRecursos.CPU"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+             xmlns:local="clr-namespace:MonitorDeRecursos"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <TextBlock x:Name="cpu_t"
+                   Style="{StaticResource text}"
+                   Text="Cargando..."/>
+
+        <Border x:Name="Ch_Border" Style="{StaticResource Ch_Border}" Loaded="Ch_Border_L">
+            <Grid x:Name="ChartContent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.Clip>
+                    <RectangleGeometry x:Name="ChartClip" RadiusX="7.5" RadiusY="7.5"/>
+                </Grid.Clip>
+                <lvc:CartesianChart x:Name="C_chart"
+                                    Series="{Binding CpuSeries}"
+                                    YAxes="{Binding YAxes}"
+                                    XAxes="{Binding XAxes}"
+                                    LegendPosition="Hidden"
+                                    Background="{DynamicResource CarbonGlowBrush}"
+                                    />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
