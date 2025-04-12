@@ -37,7 +37,7 @@ namespace MonitorDeRecursos
 
         private MainWindow main;
 
-        private int C;
+        private int C = 5;
 
         public event Action<string>? D;
         public CPU()
@@ -97,7 +97,7 @@ namespace MonitorDeRecursos
                 
                 cpu_t.Text = $"CPU: {usage:0.00}%";  //llamo a cpu_v y le cambio el texto
                 C_Values.Add(usage);
-                if (C == 5)
+                if (C >= 4)
                 {
                     C = 0;
                     D?.Invoke($" CPU\n{usage:0.00}%");
